@@ -20,13 +20,14 @@ app.use(express.static(path.join(__dirname, "/resources")));
 
 // Route Handlers
 app.get("/", (req, res) => {
-  res.render("index");
+  res.render("index"); // tetap seperti semula
 });
 
+// Swagger Playground (✅ tampil modern)
 app.use(
   "/playground",
   swaggerUi.serve,
-  swaggerUi.setup(docs.swaggerDocument, docs.options),
+  swaggerUi.setup(docs.swaggerDocument, docs.options)
 );
 
 // 404 Error Handler
